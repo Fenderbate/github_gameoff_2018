@@ -2,14 +2,15 @@ extends KinematicBody2D
 
 var bullet_scene=preload("res://scenes/Bullet.tscn")
 export (int) var speed_move=250
-export(float) var shoot_per_second=3
-var shoot_rate=1/shoot_per_second
+export(float) var shoot_per_second=5
+var shoot_rate
 var can_shoot=true
 var special=true
 var velocity=Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	shoot_rate=1/shoot_per_second
 	$Shoot_timer.wait_time=shoot_rate
 	pass # Replace with function body.
 
@@ -58,7 +59,7 @@ func _physics_process(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(str($Shoot_timer.time_left))
+	#print(str($Shoot_timer.time_left))
 	pass
 
 

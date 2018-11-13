@@ -16,7 +16,7 @@ collision/safe_margin = 0.08
 motion/sync_to_physics = false
 script = ExtResource( 1 )
 speed_move = 250
-shoot_per_second = 3
+shoot_per_second = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
