@@ -43,7 +43,7 @@ func input():
 func shoot():
 	
 	var bullet=bullet_scene.instance()
-	bullet.position=position
+	bullet.position=$bullet_spawn.position
 	get_parent().add_child(bullet)
 	
 	

@@ -28,4 +28,7 @@ wait_time = 1.0
 one_shot = true
 autostart = false
 
+[node name="bullet_spawn" type="Position2D" parent="."]
+position = Vector2( 19.4335, 0.174824 )
+
 [connection signal="timeout" from="Shoot_timer" to="." method="_on_Timer_timeout"]
