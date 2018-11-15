@@ -1,12 +1,15 @@
 extends KinematicBody2D
 
 var bullet_scene=preload("res://scenes/Bullet.tscn")
-export (int) var speed_move=250
+export (int) var speed_move=500
 export(float) var shoot_per_second=5
 var shoot_rate
 var can_shoot=true
 var special=true
 var velocity=Vector2()
+var direction=Vector2()
+var acceleration=Vector2(0.2,0.2)
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,16 +19,18 @@ func _ready():
 
 func input():
 	
-	velocity=Vector2()
+	direction=Vector2()
 	
 	if Input.is_action_pressed("up"):
-		velocity.y-=1;
+		direction.y-=1;
 	if Input.is_action_pressed("down"):
-		velocity.y+=1;
+		direction.y+=1;
 	if Input.is_action_pressed("left"):
-		velocity.x-=1
+		direction.x-=1
 	if Input.is_action_pressed("right"):
-		velocity.x+=1	
+		direction.x+=1	
+	
+	direction=direction.normalized()*speed_move
 		
 	if Input.is_action_pressed("shoot"):
 		
@@ -35,7 +40,7 @@ func input():
 			shoot()
 			$Shoot_timer.start()
 		
-	velocity=velocity.normalized()*speed_move	
+	
 	
 	
 	pass
@@ -51,9 +56,15 @@ func shoot():
 	
 func _physics_process(delta):
 	
+	velocity+=Vector2()
+	
 	input()
+	
+	velocity.x=lerp(velocity.x,direction.x,acceleration.x)	
+	velocity.y=lerp(velocity.y,direction.y,acceleration.y)	
+	
 	move_and_collide(velocity*delta)
-	 
+	
 	
 	pass	
 
