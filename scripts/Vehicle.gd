@@ -40,9 +40,6 @@ func input():
 			shoot()
 			$Shoot_timer.start()
 		
-	
-	
-	
 	pass
 
 func shoot():
