@@ -19,11 +19,6 @@ config/name="github_gameoff_2018"
 run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
-[display]
-
-window/size/width=512
-window/size/height=448
-
 [rendering]
 
 quality/driver/driver_name="GLES2"
