@@ -9,6 +9,7 @@ var special=true
 var velocity=Vector2()
 var direction=Vector2()
 var acceleration=Vector2(0.2,0.2)
+var player_index = 0
 	
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +17,7 @@ func _ready():
 	shoot_rate=1/shoot_per_second
 	$Shoot_timer.wait_time=shoot_rate
 	pass # Replace with function body.
+
 
 func input():
 	
@@ -29,6 +31,12 @@ func input():
 		direction.x-=1
 	if Input.is_action_pressed("right"):
 		direction.x+=1	
+	
+	if(abs(Input.get_joy_axis(player_index,0)) > 0.2):
+		direction.x = Input.get_joy_axis(player_index,0)
+	
+	if(abs(Input.get_joy_axis(player_index,1)) > 0.2):
+		direction.y = Input.get_joy_axis(player_index,1)
 	
 	direction=direction.normalized()*speed_move
 		
