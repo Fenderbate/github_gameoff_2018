@@ -68,7 +68,8 @@ func _physics_process(delta):
 	velocity.x=lerp(velocity.x,direction.x,acceleration.x)	
 	velocity.y=lerp(velocity.y,direction.y,acceleration.y)	
 	
-	move_and_collide(velocity*delta)
+	#move_and_collide(velocity*delta)
+	move_and_slide(velocity)
 	
 	
 	pass	
