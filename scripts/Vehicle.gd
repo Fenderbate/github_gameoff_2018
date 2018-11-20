@@ -16,6 +16,7 @@ var player_index = 0
 func _ready():
 	shoot_rate=1/shoot_per_second
 	$Shoot_timer.wait_time=shoot_rate
+	$Special_timer.wait_time=3
 	pass # Replace with function body.
 
 
@@ -39,6 +40,12 @@ func input():
 		direction.y = Input.get_joy_axis(player_index,1)
 	
 	direction=direction.normalized()*speed_move
+	
+	if Input.is_action_just_pressed("special"):
+		if special:
+			special=false
+			special_shoot()
+			$Special_timer.start()
 		
 	if Input.is_action_pressed("shoot"):
 		
@@ -49,6 +56,12 @@ func input():
 			$Shoot_timer.start()
 		
 	pass
+
+func special_shoot():
+	
+	var special_bullet=bullet_scene.instance()
+	special_bullet.position=$bullet_spawn.global_position
+	get_parent().add_child(special_bullet)
 
 func shoot():
 	
@@ -82,4 +95,9 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	can_shoot=true
+	pass # Replace with function body.
+
+
+func _on_Special_timer_timeout():
+	special=true
 	pass # Replace with function body.
