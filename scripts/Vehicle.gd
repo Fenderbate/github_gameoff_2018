@@ -9,7 +9,7 @@ var special=true
 var velocity=Vector2()
 var direction=Vector2()
 var acceleration=Vector2(0.2,0.2)
-var player_index = 0
+export var player_index = 0
 	
 
 # Called when the node enters the scene tree for the first time.
@@ -24,13 +24,13 @@ func input():
 	
 	direction=Vector2()
 	
-	if Input.is_action_pressed("up"):
+	if Input.is_action_pressed("player_"+str(player_index+1)+"_up"):
 		direction.y-=1;
-	if Input.is_action_pressed("down"):
+	if Input.is_action_pressed("player_"+str(player_index+1)+"_down"):
 		direction.y+=1;
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("player_"+str(player_index+1)+"_left"):
 		direction.x-=1
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("player_"+str(player_index+1)+"_right"):
 		direction.x+=1	
 	
 	if(abs(Input.get_joy_axis(player_index,0)) > 0.2):
@@ -41,13 +41,13 @@ func input():
 	
 	direction=direction.normalized()*speed_move
 	
-	if Input.is_action_just_pressed("special"):
+	if Input.is_action_just_pressed("player_"+str(player_index+1)+"_special"):
 		if special:
 			special=false
 			special_shoot()
 			$Special_timer.start()
 		
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("player_"+str(player_index+1)+"_shoot"):
 		
 		if can_shoot:
 			
