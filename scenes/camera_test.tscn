@@ -5,7 +5,11 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Vehicle" parent="." instance=ExtResource( 1 )]
+[node name="player_1" parent="." instance=ExtResource( 1 )]
+player_index = 0
+
+[node name="player_2" parent="." instance=ExtResource( 1 )]
+player_index = 1
 
 [node name="CameraBorder" parent="." instance=ExtResource( 2 )]
 padding = Vector2( 20, 20 )
