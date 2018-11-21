@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Vehicle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/CameraBorder.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player_1" parent="." instance=ExtResource( 1 )]
+player_index = 0
+
+[node name="player_2" parent="." instance=ExtResource( 1 )]
+player_index = 1
+
+[node name="CameraBorder" parent="." instance=ExtResource( 2 )]
+padding = Vector2( 20, 20 )
+
