@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Bubble.gd" type="Script" id=1]
+[ext_resource path="res://art/5a2fe836b681e8.4663545915130890787476.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 20.5547
+
+[node name="Bubble" type="KinematicBody2D"]
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+collision/safe_margin = 0.08
+motion/sync_to_physics = false
+script = ExtResource( 1 )
+BUBBLE_VELOCITY = 150
+
+[node name="bubble" type="Sprite" parent="."]
+position = Vector2( -0.72177, 0.311372 )
+scale = Vector2( 0.0827221, 0.0827221 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4.41174, -36.5545 )
+shape = SubResource( 1 )
+

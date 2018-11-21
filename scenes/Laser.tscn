@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Laser.gd" type="Script" id=1]
+[ext_resource path="res://art/laser.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 6.83355, 2.81575 )
+
+[node name="Laser" type="KinematicBody2D"]
+position = Vector2( 0, -0.122086 )
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+collision/safe_margin = 0.08
+motion/sync_to_physics = false
+script = ExtResource( 1 )
+LASER_VELOCITY = 500
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.0741014, 0.133745 )
+scale = Vector2( 0.107474, 0.0185325 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.183131, 0.0610437 )
+scale = Vector2( 1.55549, 0.285793 )
+rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

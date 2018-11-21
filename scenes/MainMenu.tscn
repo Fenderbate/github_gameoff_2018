@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://misc/font_x32__press_start.tres" type="DynamicFont" id=2]
+[ext_resource path="res://art/blue_water.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Boss.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/blue_light.png" type="Texture" id=4]
+[ext_resource path="res://scripts/blue_light.gd" type="Script" id=5]
 
 [node name="MainMenu" type="Control"]
 anchor_left = 0.0
@@ -15,70 +18,27 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
-game_path = "res://scenes/Game.tscn"
 
-[node name="Title" type="Label" parent="."]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
-margin_bottom = 225.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-text = "Game Title"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+[node name="blue_wate" type="Sprite" parent="."]
+position = Vector2( 541.351, 318.27 )
+scale = Vector2( 0.761666, 0.761666 )
+texture = ExtResource( 2 )
 
-[node name="PlayText" type="Label" parent="."]
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = -323.0
-margin_right = 3.0
-margin_bottom = -1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-text = "Play"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+[node name="Node2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 800, 305.163 )
 
-[node name="Play" type="TextureButton" parent="PlayText"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 191.0
-margin_top = 144.0
-margin_right = 317.0
-margin_bottom = 178.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+[node name="blue_light" type="Sprite" parent="."]
+position = Vector2( 781.743, 326.388 )
+scale = Vector2( 0.880107, 0.880107 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
 
-[connection signal="button_down" from="PlayText/Play" to="." method="_on_Play_button_down"]
+[node name="Tween" type="Tween" parent="blue_light"]
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[connection signal="tween_completed" from="blue_light/Tween" to="blue_light" method="_on_Tween_tween_completed"]
