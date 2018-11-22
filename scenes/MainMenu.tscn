@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=2]
 [ext_resource path="res://misc/font_x64__press_start.tres" type="DynamicFont" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://art/menu_pointer.png" type="Texture" id=4]
 [ext_resource path="res://misc/font_x32__press_start.tres" type="DynamicFont" id=5]
 [ext_resource path="res://misc/font_x16__press_start.tres" type="DynamicFont" id=6]
 [ext_resource path="res://audio/music_test.ogg" type="AudioStream" id=7]
@@ -83,7 +83,6 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="Main" type="Control" parent="."]
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -105,8 +104,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 377.0
 margin_top = -4.0
-margin_right = 441.0
-margin_bottom = 60.0
+margin_right = 425.0
+margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -114,6 +113,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 4 )
+expand = true
 stretch_mode = 0
 
 [node name="Play" type="Label" parent="Main"]
@@ -185,7 +185,7 @@ shortcut = null
 group = null
 
 [node name="PointerPos" type="Position2D" parent="Main/OptionsButton"]
-position = Vector2( -20, 14 )
+position = Vector2( -30, 14 )
 
 [node name="ExitButton" type="TextureButton" parent="Main"]
 anchor_left = 0.0

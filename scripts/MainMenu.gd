@@ -95,7 +95,6 @@ func _on_OptionsButton_button_down():
 
 func _on_ExitButton_button_down():
 	$ExitGamePopup.show()
-	print("Don't show this option on web export (MainMenu.gd)")
 
 
 func _on_Music_value_changed(value):
