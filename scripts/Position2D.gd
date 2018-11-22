@@ -51,6 +51,7 @@ func set_state(new_state):
 class ShotState:
 	var boss
 	var timer2 = 0
+	
 	func _init(boss):
 		self.boss = boss
 		
@@ -104,7 +105,6 @@ class LaserState:
 	
 	func _fixed_process(delta):
 		
-		print(timer2)
 		if boss.angle!=0.2:
 			if boss.angle<=-0.3:
 				boss.direction = true
@@ -174,7 +174,6 @@ class FishState:
 			fish_instance.pos = boss.vectorPosition
 			boss.get_parent().add_child(fish_instance)
 			
-		print(timerFish)
 		if boss.timer>60:
 			boss.timer = 0
 		if timerFish >= 300:
@@ -228,7 +227,6 @@ class BubbleState:
 			bubble_instance.pos = boss.vectorPosition
 			boss.get_parent().add_child(bubble_instance)
 			
-		print(timerBubble)
 		if boss.timer>60:
 			boss.timer = 0
 		if timerBubble >= 300:
