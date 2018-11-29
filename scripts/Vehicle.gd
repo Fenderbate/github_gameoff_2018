@@ -8,7 +8,7 @@ var can_shoot=true
 var special=true
 var velocity=Vector2()
 var direction=Vector2()
-var acceleration=Vector2(0.2,0.2)
+export (Vector2)var acceleration=Vector2(0.2,0.2)
 export var player_index = 0
 	
 
