@@ -11,10 +11,13 @@
 padding = Vector2( 20, 20 )
 
 [node name="Vehicle" parent="." instance=ExtResource( 2 )]
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Vehicle2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 90 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Vehicle3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 180 )
+scale = Vector2( 1.5, 1.5 )
 
