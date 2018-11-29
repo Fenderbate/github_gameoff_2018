@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Vehicle.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 4.2984
+height = 12.6749
+
+[node name="Vehicle" instance=ExtResource( 1 )]
+speed_move = 300
+acceleration = Vector2( 0.3, 0.3 )
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 3, 0 )
+frame = 1
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, 3 )
+
+[node name="bullet_spawn" parent="." index="4"]
+position = Vector2( 15.5, -8 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="5"]
+position = Vector2( -9, -6.224 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
