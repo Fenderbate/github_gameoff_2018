@@ -24,10 +24,6 @@ func _input(event):
 	
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and !event.pressed:
-			if $Options/Music.has_focus():
-				print("asd")
-				$Options/Music.release_focus()
-				$Music.stream_paused = true
 			if $Options/Sound.has_focus():
 				$Options/Music.release_focus()
 				$Sound.play()
@@ -71,10 +67,14 @@ func pointer_pos_changed(value):
 
 
 func _on_PlayButton_button_down():
+	self.pointer_pos = 0
+	
 	Global.change_scene(target_scene)
 
 
 func _on_OptionsButton_button_down():
+	
+	self.pointer_pos = 1
 	
 	if $AnimationPlayer.is_playing():
 		return
@@ -94,6 +94,8 @@ func _on_OptionsButton_button_down():
 
 
 func _on_ExitButton_button_down():
+	self.pointer_pos = 2
+	
 	$ExitGamePopup.show()
 
 
@@ -102,10 +104,7 @@ func _on_Music_value_changed(value):
 
 
 func _on_Music_focus_entered():
-	if $Music.stream_paused:
-		$Music.stream_paused = false
-		return
-	$Music.play()
+	pass
 
 
 func _on_Sound_value_changed(value):

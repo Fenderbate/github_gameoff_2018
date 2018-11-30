@@ -6,7 +6,7 @@
 [ext_resource path="res://art/menu_pointer.png" type="Texture" id=4]
 [ext_resource path="res://misc/font_x32__press_start.tres" type="DynamicFont" id=5]
 [ext_resource path="res://misc/font_x16__press_start.tres" type="DynamicFont" id=6]
-[ext_resource path="res://audio/music_test.ogg" type="AudioStream" id=7]
+[ext_resource path="res://audio/Merlin_-_Lone_Mission_GHGO_track01.ogg" type="AudioStream" id=7]
 [ext_resource path="res://audio/sound_test.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
@@ -60,6 +60,23 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 target_scene = ExtResource( 2 )
+
+[node name="BG" type="ColorRect" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -50.0
+margin_top = -48.0
+margin_right = 1122.0
+margin_bottom = 695.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 1 )
 
 [node name="Title" type="Label" parent="."]
 anchor_left = 0.0
@@ -313,7 +330,7 @@ focus_mode = 2
 stream = ExtResource( 7 )
 volume_db = 0.0
 pitch_scale = 1.0
-autoplay = false
+autoplay = true
 stream_paused = false
 mix_target = 0
 bus = "Music"
