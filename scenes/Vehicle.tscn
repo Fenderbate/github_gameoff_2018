@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Vehicle.gd" type="Script" id=1]
+[ext_resource path="res://art/test.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 10.0
-height = 20.0
+radius = 5.99995
+height = 22.0001
 
 [node name="Vehicle" type="KinematicBody2D"]
 input_pickable = false
@@ -17,6 +18,13 @@ motion/sync_to_physics = false
 script = ExtResource( 1 )
 speed_move = 500
 shoot_per_second = 20.0
+acceleration = Vector2( 0.2, 0.2 )
+player_index = 0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 2 )
+texture = ExtResource( 2 )
+hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
