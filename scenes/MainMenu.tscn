@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=2]
-[ext_resource path="res://misc/font_x64__press_start.tres" type="DynamicFont" id=3]
-[ext_resource path="res://art/menu_pointer.png" type="Texture" id=4]
-[ext_resource path="res://misc/font_x32__press_start.tres" type="DynamicFont" id=5]
-[ext_resource path="res://misc/font_x16__press_start.tres" type="DynamicFont" id=6]
-[ext_resource path="res://audio/Merlin_-_Lone_Mission_GHGO_track01.ogg" type="AudioStream" id=7]
-[ext_resource path="res://audio/sound_test.wav" type="AudioStream" id=8]
+[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=3]
+[ext_resource path="res://misc/font_x64__press_start.tres" type="DynamicFont" id=4]
+[ext_resource path="res://art/menu_pointer.png" type="Texture" id=5]
+[ext_resource path="res://misc/font_x32__press_start.tres" type="DynamicFont" id=6]
+[ext_resource path="res://misc/font_x16__press_start.tres" type="DynamicFont" id=7]
+[ext_resource path="res://audio/Merlin_-_Lone_Mission_GHGO_track01.ogg" type="AudioStream" id=8]
+[ext_resource path="res://audio/sound_test.wav" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 
